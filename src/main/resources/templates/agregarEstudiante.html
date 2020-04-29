@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Agregar Estudiante</title>
+</head>
+<body>
+
+    <h1>Agregar un Alumno</h1>
+
+    <!--/*@thymesVar id="estudiante" type="com.example.tarea3capas.domain.Estudiante"*/-->
+    <form action="#" th:action="@{/agregarEstudiante}" th:object="${estudiante}" method="post">
+        <p>
+            Nombre: <input type="text" th:field="*{nombre}" required>
+        </p>
+
+        <p>
+            Apellido: <input type="text" th:field="*{apellido}" required>
+        </p>
+
+        <p>
+            <input type="date" th:field="*{fecha}" required pattern="[0-9]{4}/[0-9]{2}/[0-9]{2}">
+        </p>
+
+        <p>
+            Lugar de Nacimiento: <input type="text" th:field="*{lugar}" required>
+        </p>
+
+        <p>
+            Institucion de procedencia: <input type="text" th:field="*{instituto}" required>
+        </p>
+
+        <p>
+            Celular: <input type="text" th:field="*{celular}" required>
+        </p>
+
+        <p>
+            Telefono: <input type="text" th:field="*{telefono}" required>
+        </p>
+
+        <p>
+            <input type="submit" value="Enviar">
+        </p>
+    </form>
+
+</body>
+</html>
